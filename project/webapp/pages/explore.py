@@ -1,38 +1,26 @@
 import streamlit as st
-import base64
-import os
-def navigate_to(page):
-   st.switch_page(page)
+from pages.modules.upbar import *
 
-with st.sidebar:
-    # Логотип и название
-    # Здесь должен быть логотип, но пока используем текст
-    st.title("BOW2")
-    st.write("Builds in base: 1,328")
-    st.write("Last update: Apr 20, 2024")
+def show_explore_page():
     
-    # Навигационные кнопки
-    st.write("## Navigation")
-    if st.button("🏠 Home", use_container_width=True):
-        navigate_to('pages/home.py')
+    show_up()
     
-    if st.button("🔨 Create Build", use_container_width=True):
-        navigate_to('pages/build.py')
-    
-    if st.button("🔍 Explore", use_container_width=True):
-        navigate_to('pages/explore.py')
-    
-    if st.button("📊 Abilities", use_container_width=True):
-        navigate_to('pages/abilities.py')
-    
-    # Информация внизу сайдбара
-    st.write("---")
-    st.write("## Info")
-    st.write("X: @X")
-    st.write("B2OW2@gmail.com")
+    # Создаем контейнер с красивым оформлением
+    with st.container():
+        # Заголовок страницы
+        st.markdown("""
+            <h1 style='text-align: center; color: #FF9D00; 
+            font-family: "Segoe UI", sans-serif; margin-bottom: 2rem;'>
+            Explore Heroes
+            </h1>
+        """, unsafe_allow_html=True)
+        
 
+        st.image("pages/static/media/placeholder.png")
+        
 
-def display_explore_page():
-    gif_location = "/static/media/logo.png"
-    st.image(gif_location)
-display_explore_page()
+if __name__ == "__main__":
+    params = dict(st.query_params)
+    current_page = params.get("page", ["explore"])[0]
+    if current_page == "explore":
+        show_explore_page()
