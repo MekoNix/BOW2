@@ -31,4 +31,13 @@ def update_json(filename, json_data):
     return data
 '''Вроде рабочая темка'''
 
+def edit_data(filename, key, new_value):
+    data = get_json_data(filename)
+    if key in data:
+        data[key] = new_value
+        with open(filename, 'w') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+
 # update_json("abi.json", generate_json("123","123","123","123","123"))
+ 
