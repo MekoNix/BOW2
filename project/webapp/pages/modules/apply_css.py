@@ -2,13 +2,10 @@ import streamlit as st
 from pages.modules.upbar import *
 from pages.modules.theme import *
 
-def setup_page(title="BOW2", page_name=None):
+def setup_page(page_name):
     """
-    Общая настройка страницы с базовыми стилями
+    Default css setup
     """
-
-
-    # Очищаем URL параметры и устанавливаем текущую страницу
     st.query_params.clear()
     if page_name:
         st.session_state.current_page = page_name
@@ -37,7 +34,19 @@ def setup_page(title="BOW2", page_name=None):
         .stButton button:hover {
             background-color: #3a3d45 !important;
         }
+        div.block-container {
+            padding-top: 0 !important;
+        }
+        div.appview-container {
+        margin-top: 0 !important;
+        }
+        section.main {
+        padding-top: 0 !important;
+        }
         </style>
     """, unsafe_allow_html=True)
     show_up()
-    apply_dark_theme()  
+    apply_dark_theme()
+    if page_name == "abilities":
+        with open('pages/static/css/abilities.css', 'r') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)

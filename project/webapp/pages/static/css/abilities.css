@@ -1,0 +1,241 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.sidebar-search {
+    margin-bottom: 2rem;
+}
+
+.sidebar-search input {
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    padding: 0.75rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.stCheckbox {
+    background: #2a2a2a !important;
+    border: 1px solid #3a3a3a !important;
+    border-radius: 4px !important;
+    padding: 0.3rem 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    transition: all 0.2s ease;
+}
+
+.stCheckbox:hover {
+    border-color: #4a4a4a !important;
+    background: #333333 !important;
+}
+
+.stCheckbox label {
+    color: #aaaaaa !important;
+    font-size: 0.85rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    cursor: pointer !important;
+}
+
+.stCheckbox label:hover {
+    color: #ffffff !important;
+}
+
+.sidebar-panel {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-right: 1rem;
+}
+
+.sidebar-subtitle {
+    color: #cccccc;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+
+.stSelectbox > div {
+    background-color: #2a2a2a !important;
+    border: 1px solid #3a3a3a !important;
+    border-radius: 4px;
+}
+
+.stMultiSelect > div {
+    background-color: #2a2a2a !important;
+    border: 1px solid #3a3a3a !important;
+}
+
+
+.ability-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 1.25rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #3a3a3a;
+    margin: 0.5rem;
+}
+
+.ability-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border-color: #4a4a4a;
+}
+
+
+.ability-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #3a3a3a;
+    padding-bottom: 0.75rem;
+}
+
+.ability-card-header h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+.ability-card-body {
+    flex-grow: 1;
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+
+.price-tag {
+    background-color: #ff9800;
+    color: #000000;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+.ability-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: #3a3a3a;
+    color: #c0c0c0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+
+.stMultiSelect div[data-baseweb="select"] {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+.stMultiSelect div[data-baseweb="select"] span {
+    color: #ffffff;
+}
+
+.stMultiSelect div[data-baseweb="tag"] {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+
+.stTextInput input {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: #3a3a3a;
+}
+
+
+.stSlider [data-baseweb="slider"] {
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .ability-card {
+        padding: 1rem;
+    }
+    
+    .ability-card-header h3 {
+        font-size: 1rem;
+    }
+    
+    .ability-card-body {
+        font-size: 0.8rem;
+    }
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.empty-results {
+    text-align: center;
+    padding: 3rem;
+    color: #888888;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+
+.results-count {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: right;
+}

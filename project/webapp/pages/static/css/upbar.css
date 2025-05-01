@@ -1,10 +1,10 @@
 .nav-container {
     position: relative;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
     margin: 0 -5rem;
     padding-left: 5rem;
     padding-right: 5rem;
-    background: linear-gradient(90deg, #FF6B6B, #6C5CE7);
+    background: linear-gradient(90deg, #ff5722, #6C5CE7, #5eb0e7);
     background-size: 200% 200%;
     animation: gradientAnimation 5s ease infinite;
     backdrop-filter: blur(10px);
@@ -12,55 +12,117 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
+    min-height: 5px; 
+    max-height: 5px; 
 }
 
+header {visibility: hidden;}
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+
+
+html, body {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+
+* {
+    scrollbar-width: none !important;
+}
+
+
+* {
+    -ms-overflow-style: none !important;
+}
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.nav-container .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.4em;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+/* Fixed width for button containers */
+.stButton {
+    width: 100px !important;
+    min-width: 100px !important;
+    text-align: center !important;
+    display: block !important;
 }
 
 .stButton button {
     background: transparent !important;
     border: none !important;
     border-radius: 12px !important;
-    padding: 0.8rem 1.2rem !important;
+    padding: 0.3rem 0.6rem !important; /* Further reduced padding */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 2.4em !important;
+    font-size: 1.6em !important; /* Further reduced font size */
     color: rgba(255, 255, 255, 0.8) !important;
-    margin: 0 1rem !important;
-    line-height: 1.2 !important;
+    margin: 0 !important; /* Removed horizontal margins */
+    line-height: 1 !important; /* Reduced line height */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    width: 100% !important; /* Make the button take full width of its container */
+    white-space: nowrap !important; /* Prevent text wrapping */
+    height: 30px !important; /* Fixed height for buttons */
 }
-
 .stButton button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: rgba(255, 255, 255, 0.1) !important;
     box-shadow: 0 0 15px 5px rgba(108, 92, 231, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.2) inset;
     color: rgba(255, 255, 255, 1) !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .stButton button:active {
     transform: translateY(0px);
     background: rgba(255, 255, 255, 0.15) !important;
     box-shadow: 0 2px 8px rgba(108, 92, 231, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
-
-/* Подсветка активной страницы */
 .stButton.active button {
     color: rgba(255, 255, 255, 1) !important;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+[data-testid="column"] {
+    flex: 0 0 auto !important;
+    min-width: fit-content !important;
+}
+
+@media screen and (max-width: 992px) {
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0 -1rem;
+    }
+    
+    .logo {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .stButton {
+        width: 80px !important;
+        min-width: 80px !important;
+    }
+    
+    .stButton button {
+        font-size: 1.5em !important;
+        padding: 0.4rem 0.6rem !important;
+    }
 }

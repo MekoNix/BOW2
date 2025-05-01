@@ -5,5 +5,5 @@ project/webapp/pages/modules/powers.json
 .gitignore
 project/webapp/pages/static/media/hacpaho.png
 project/webapp/pages/static/media/ss.mp4
-project/webapp/pages/static/db/stat.json
 project/webapp/pages/modules/abi.json
+project/webapp/pages/static/db/

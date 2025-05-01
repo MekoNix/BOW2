@@ -1,7 +1,0 @@
-ability 
-
-"name" : "название"
-"desc": "описаниие"
-"image": "картиикна"
-"tags" : ["+weaponpower","reduce cooldayn"]
-"price" "Цена"

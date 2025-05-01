@@ -1,7 +1,6 @@
 import streamlit as st
 from pages.modules.upbar import *
 
-# Инициализируем session_state
 if 'current_page' not in st.session_state:
     st.session_state.current_page = "home"
 
